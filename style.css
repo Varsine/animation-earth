@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: url("./img/cosmos.jpg");
+}
+.earth {
+  position: relative;
+  width: 500px;
+  left: 20%;
+  z-index: 1;
+  animation: earthRol 35s infinite linear;
+}
+@keyframes earthRol {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.moon {
+  position: absolute;
+  z-index: 0;
+  animation: moonRol 5s infinite linear;
+}
+@keyframes moonRol {
+  0% {
+    width: 90px;
+    left: 15%;
+    top: 100px;
+    z-index: 2;
+  }
+  25% {
+    width: 200px;
+    top: 250;
+  }
+  50% {
+    left: 60%;
+    top: 250px;
+    z-index: 2;
+  }
+  51% {
+    z-index: 0;
+    transform: rotate(360deg);
+  }
+  100% {
+    width: 90px;
+    left: 15%;
+    top: 100px;
+  }
+}
+@media only screen and (max-width: 1250px) {
+  .earth {
+    width: 30%;
+    left: 10%;
+  }
+  @keyframes moonRol {
+    0% {
+      width: 10%;
+      left: 1%;
+      top: 9%;
+      z-index: 2;
+    }
+    25% {
+      width: 15%;
+      top: 13%;
+    }
+    50% {
+      left: 45%;
+      z-index: 2;
+    }
+    51% {
+      z-index: 0;
+      transform: rotate(360deg);
+    }
+    100% {
+      width: 10%;
+      left: 1%;
+      top: 9%;
+    }
+  }
+}
+@media only screen and (max-width: 800px) {
+  .earth {
+    margin-top: 5%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .earth {
+    margin-top: 9%;
+  }
+}
